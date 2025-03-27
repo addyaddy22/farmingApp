@@ -12,7 +12,7 @@ def get_db():
         yield db
     finally:
         db.close()
-
+#Data submit route
 @router.post("/submit")
 def submit_data(data: FarmDataCreate, db: Session = Depends(get_db)):
     db_data = FarmData(**data.dict())
