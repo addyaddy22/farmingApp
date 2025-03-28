@@ -22,3 +22,13 @@ class FarmOptionsDataCreate(BaseModel):
     farm_type: str
     crop: str
     location: str
+
+class FarmDataResponse(BaseModel):
+    farmer_name: str
+    nation_id: str
+    farm_type: str
+    crop: str
+    location: str
+    
+# class Config:
+#     orm_mode = True

@@ -27,4 +27,4 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
     db_user = db.query(User).filter(User.username == user.username).first()
     if not db_user or db_user.password != user.password:
         raise HTTPException(status_code=400, detail="Invalid credentials")
-    return {"message": "Login successful", "role": db_user.role}
+    return {"data": db_user, "role": db_user.role}
